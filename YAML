@@ -1,0 +1,20 @@
+version '2'
+services:
+  python:
+    image:srinivas/pythonredis:1
+    container_name:python
+    environment:
+      _"redis_host=redis"
+    ports:
+     _"8080:5000"
+    networks:
+      _ javahome-app
+    redis:
+    container_name: redis
+    image: "redis"
+    networks:
+     - javahome-app
+networks:
+  javahome-app:
+    driver: bridge
+    
